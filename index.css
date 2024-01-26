@@ -6,3 +6,189 @@
  */
 
 @import "reset.css";
+
+/* Custom Fonts Imports */
+
+@import "./fonts/fonts.css";
+
+/* Colors */
+:root {
+	--grey: #c9bfae;
+	--black-tint-text: rgba(0, 0, 0, .5);
+	--silver-bg: #f2eee9;
+	--white: #fff;
+	--black: #000;
+	--russet: #8c4d2e;
+	--ecru: #debc78;
+	--buff: #cd9563;
+	--brown-sugar: #c06c50;
+}
+
+/* Type */
+:root {
+	--larken-light: "larken-lightregular";
+	--mark-regular: "mark_proregular";
+	--mark-medium: "mark_promedium";
+	--nav-text: 0.625rem;
+	--header-1: 2.1rem;
+	--header-2: 1.875rem;
+    --header-3: 1.5rem;
+	--button-text: 0.875rem;
+	--pry-label: 0.625rem;
+	--sec-label: 0.75rem;
+	--body: 0.9375rem;
+}
+
+/* Utilities */
+
+body {
+	font-size: var(--body);
+}
+
+.header-4{
+    font-family: var(--mark-regular);
+	text-transform: uppercase;
+	font-size: var(--pry-label);
+    color: var(--black-tint-text);
+}
+
+.header-2{
+    font-family: var(--larken-light);
+	font-size: var(--header-2);
+}
+
+.header-3{
+    font-family: var(--larken-light);
+    font-size: var(--header-3)
+
+}
+
+.header-5{
+    font-family: var(--mark-regular);
+	font-size: var(--sec-label);
+    color: var(--black-tint-text);
+}
+
+.header-6{
+    text-transform: uppercase;
+    color: var(--black-tint-text);
+    font-size: var(--sec-label);
+    font-family: var(--mark-regular)
+}
+
+/* Components */
+.button {
+	font-family: var(--mark-medium);
+	font-size: var(--button-text);
+	background-color: transparent;
+	border-color: var(--white);
+	border: 1px solid;
+	color: var(--white);
+	padding: 1rem 2.3125rem;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin: 0 24px;
+}
+
+nav {
+	display: flex;
+	grid-column: 1/-1;
+	justify-content: space-between;
+	align-items: center;
+	/* width: 100%; */
+}
+
+hr {
+	border-top-color: var(--grey);
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-family: var(--mark-medium);
+	grid-column: 1/-1;
+	height: 2.3125rem;
+	font-size: var(--nav-text);
+}
+
+
+/*  */
+
+.hero {
+	height: 500px;
+	width: 100%;
+	background-color: blue;
+
+	/* background-image: linear-gradient(
+			180deg,
+			rgba(16, 16, 16, 0) 68.5%,
+			rgba(0, 0, 0, 0.79) 94%
+		),
+		url(./images/HeroImage.png); */
+	background-size: cover;
+	/* background-repeat: no-repeat; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero > h1 {
+	color: var(--white);
+	font-size: var(--header-1);
+	font-family: var(--larken-light);
+	text-align: center;
+	/* margin-top: auto; */
+	/* position: relative;
+    top: 50%;
+    translate: 0 -50%; */
+}
+
+.hero > button {
+	margin-top: 36px;
+}
+
+.hero > span {
+	margin-top: auto;
+	margin-bottom: 30px;
+}
+
+/*  */
+
+.showcase {
+	grid-column: -1/1;
+	text-align: center;
+}
+.showcase > .ft-img img {
+	aspect-ratio: 1/1.7;
+}
+
+.showcase > button {
+    border-color: var(--black);
+    color: var(--black);
+}
+
+.featured {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px; 
+    /* Rems */
+}
+
+
+/* Look in to css selectors to isolate children */
+.article2 > h4 ,.article >h4 {
+    margin-top: 10px;
+}
+
+.article2 > h5 , .article > h5{
+    margin-top: 8px;
+} 
+
+
