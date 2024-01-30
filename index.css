@@ -55,6 +55,11 @@ body {
   color: var(--black-tint-text);
 }
 
+.header-1{
+  font-size: var(--header-1);
+  font-family: var(--larken-light);
+}
+
 .header-2 {
   font-family: var(--larken-light);
   font-size: var(--header-2);
@@ -91,7 +96,7 @@ body {
   background-color: transparent;
   border-color: var(--white);
   border: 1px solid;
-  color: var(--white);
+  color: inherit;
   padding: 1rem 2.3125rem;
 }
 
@@ -99,6 +104,10 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 24px;
+}
+
+.inner-wrapper{
+  grid-column: 1/-1;
 }
 
 .layout {
@@ -109,15 +118,23 @@ body {
   margin-top: 50px;
 }
 
+.article > img{
+  aspect-ratio: 1.91/1;
+  object-fit: cover;
+}
+
+.article2 > img{
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.article-grp{
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+}
 /*  */
 
-nav {
-  display: flex;
-  grid-column: 1/-1;
-  justify-content: space-between;
-  align-items: center;
-  /* width: 100%; */
-}
 
 nav > .hamburger,
 .search {
@@ -131,6 +148,9 @@ nav > .logo {
 
 .nav-menu {
   padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 hr {
@@ -143,7 +163,6 @@ hr {
   align-items: center;
   text-transform: uppercase;
   font-family: var(--mark-medium);
-  grid-column: 1/-1;
   height: 2.3125rem;
   font-size: var(--nav-text);
 }
@@ -151,6 +170,7 @@ hr {
 /*  */
 
 .hero {
+  color: var(--white);
   height: calc(100vh - 113.41px);
   width: 100%;
   background-image: linear-gradient(
@@ -177,7 +197,7 @@ hr {
 }
 
 .hero > div > h1 {
-  color: var(--white);
+  
   font-size: var(--header-1);
   font-family: var(--larken-light);
 }
@@ -198,7 +218,6 @@ hr {
 }
 
 .showcase {
-  grid-column: -1/1;
   text-align: center;
   margin-bottom: 77px;
 }
@@ -211,13 +230,6 @@ hr {
   color: var(--black);
 }
 
-.featured {
-  grid-column: 1/-1;
-  display: flex;
-  flex-direction: column;
-  row-gap: 60px;
-  /* Rems */
-}
 
 .featured > .sec-label {
   text-transform: uppercase;
@@ -269,7 +281,6 @@ Picks all elements that follow the above element that are also not hidden */
 /* Case Study */
 
 .case-study {
-  grid-column: 1/-1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,15 +318,86 @@ Picks all elements that follow the above element that are also not hidden */
   margin-top: 1rem;
 }
 
-.more-articles {
-	grid-column: 1/-1;
-	display: flex;
-	flex-direction: column;
-	row-gap: 60px;
+
+
+/*  */
+
+.special-edition{
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.special-edition > p {
+  margin-top: 20px;
+  margin-bottom: 35px;
 }
 
 
+.mag-slide{
+  display: flex;
+}
 
+
+/*  */
+
+.art-slide{
+  display: flex;
+  column-gap: 35px;
+}
+
+/*  */
+
+.more-articles > p {
+  text-transform: uppercase;
+  color: var(--black-tint-text);
+  margin-bottom: 3.75rem;
+
+} 
+
+/*  */
+
+.mag-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mag-issue{
+  text-transform: uppercase;
+  color: var(--black-tint-text);
+  text-align: center;
+}
+
+.mag1{
+  display: none;
+}
+
+.mag-desc{
+  text-align: center;
+}
+
+.mags{
+  display: flex;
+  height: 144px;
+}
+
+
+/*  */
+.journey{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.journey > .header-1{
+  text-align: center;
+}
+
+/*  */
+.category > p{
+  
+}
 
 
 /* REMEMBER TO CHANGE PIXELS TO REMS */
