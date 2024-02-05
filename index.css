@@ -108,7 +108,7 @@ body {
   border-color: var(--white);
   border: 1px solid;
   color: inherit;
-  padding: .6875rem 1.25rem;
+  padding: 0.6875rem 1.25rem;
 }
 
 .wrapper {
@@ -131,21 +131,59 @@ body {
 
 /*  */
 
-nav > .hamburger,
-.search {
-  width: 1.125rem;
-  height: 1.125rem;
-}
-
-nav > .logo {
-  width: 7.063rem;
-}
-
 .nav-menu {
   padding: 0.625rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-menu > .hamburger,
+.search {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.nav-menu > .logo {
+  width: 7.063rem;
+}
+
+.nav-menu > div {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu > div > .button{
+  display: none;
+}
+
+
+
+@media (min-width: 768px) {
+  .nav-menu > .hamburger {
+    display: flex;
+  }
+
+  .nav-menu > .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-menu > div {
+    column-gap: 2.313rem;
+    justify-content: end;
+  }
+
+  .nav-menu > div > .button{
+    display: block;
+  }
+  
+
+  .nav-menu > :not([hidden]) {
+    width: calc(100% / 3);
+  }
+
+
 }
 
 hr {
@@ -397,7 +435,6 @@ Picks all elements that follow the above element that are also not hidden */
   justify-content: space-around;
 }
 
-
 .editor > p:first-child {
   text-transform: uppercase;
   color: var(--black-tint-text);
@@ -414,15 +451,14 @@ Picks all elements that follow the above element that are also not hidden */
   column-gap: 2.188rem;
 }
 
-.art-slide >  div{
+.art-slide > div {
   width: max-content;
   min-width: 14.69rem;
 }
 
-.editor > .button{
+.editor > .button {
   align-self: center;
 }
-
 
 /*  */
 
@@ -492,13 +528,12 @@ Picks all elements that follow the above element that are also not hidden */
   row-gap: 3.25rem;
 }
 
-.journey-info{
+.journey-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 17.813rem;
   justify-content: space-between;
-
 }
 
 .journey-info > .header-1 {
@@ -514,12 +549,11 @@ Picks all elements that follow the above element that are also not hidden */
 
 .catwrapper {
   grid-column: 1/-1;
-  
+
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  row-gap: 3.75rem ;
- 
+  row-gap: 3.75rem;
 }
 
 .category {
@@ -586,7 +620,6 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .newsletter {
-  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -605,7 +638,6 @@ Picks all elements that follow the above element that are also not hidden */
   text-align: center;
 }
 
-
 .newsletter > form {
   display: flex;
   color: var(--black);
@@ -623,8 +655,8 @@ Picks all elements that follow the above element that are also not hidden */
   background-color: transparent;
 }
 
-.newsletter > p:last-child{
-  font-size: .875rem;
+.newsletter > p:last-child {
+  font-size: 0.875rem;
 }
 /* footer */
 
@@ -688,13 +720,12 @@ footer {
   row-gap: 50px;
   height: 28.813rem;
   align-content: center;
-  
 }
 
 .grp1 {
   font-size: var(--pry-label);
   font-family: var(--mark-medium);
-  
+
   display: flex;
   flex-direction: column;
   row-gap: 21px;
