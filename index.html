@@ -14,8 +14,8 @@
   </head>
   <body class="layout">
     <header>
-      <div class="wrapper">
-        <div class="inner-wrapper">
+      <div class="container">
+        <div class="content">
           <nav class="nav-menu">
             <span class="hamburger">
               <img src="./images/Hamburger.svg" alt="menu" />
@@ -29,17 +29,22 @@
           </nav>
         </div>
       </div>
+
       <hr />
-      <nav class="wrapper">
-        <div class="inner-wrapper">
-          <ul class="nav-links">
-            <li class="nav-link"><a href="#">design</a></li>
-            <li class="nav-link"><a href="#">selection</a></li>
-            <li class="nav-link"><a href="#">inspiration</a></li>
-            <li class="nav-link"><a href="#">escape</a></li>
-          </ul>
+
+      <div class="container">
+        <div class="content">
+          <nav>
+            <ul class="nav-links">
+              <li class="nav-link"><a href="#">design</a></li>
+              <li class="nav-link"><a href="#">selection</a></li>
+              <li class="nav-link"><a href="#">inspiration</a></li>
+              <li class="nav-link"><a href="#">escape</a></li>
+            </ul>
+          </nav>
         </div>
-      </nav>
+      </div>
+
       <hr />
     </header>
 
@@ -57,107 +62,143 @@
     </section>
 
     <section>
-      <div class="wrapper">
-        <div class="inner-wrapper">
+      <div class="container">
+        <div class="content grouped">
           <div class="showcase">
             <div class="ft-img">
               <img src="./images/ArticleImage1.png" alt="" />
             </div>
-            <p class="pry-label">Fashion</p>
-            <h2 class="header-2">
-              The Nordic and versatile wardrobe from the Rohe label for spring
-              2024
-            </h2>
-            <p class="sec-label">By Salome Mathieu</p>
 
-            <p>
-              Based in Amsterdam, the Rohe fashion label designs silhouettes
-              with clean, minimal lines. As evidenced by the latest collection
-              “Frame 03”, inspired by tailoring
-            </p>
-            <button class="button">Discover</button>
+            <div class="ft-cont">
+              <p class="pry-label">Fashion</p>
+              <h2 class="header-2">
+                The Nordic and versatile wardrobe from the Rohe label for spring
+                2024
+              </h2>
+              <p class="sec-label">By Salome Mathieu</p>
+
+              <p>
+                Based in Amsterdam, the Rohe fashion label designs silhouettes
+                with clean, minimal lines. As evidenced by the latest collection
+                “Frame 03”, inspired by tailoring
+              </p>
+              <button class="button">Discover</button>
+            </div>
           </div>
 
           <div class="featured">
             <p class="sec-label">featured</p>
             <div class="article-grp">
               <div class="article">
-                <img lazy src="./images/ArticleImage4a.jpg" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  Inspirations: 8 dining rooms with a bench
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage4a.jpg" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    Inspirations: 8 dining rooms with a bench
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article">
-                <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  Inspirations: 8 dining rooms with a bench
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage4b.jpg" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    Inspirations: 8 dining rooms with a bench
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article2">
-                <img lazy src="./images/ArticleImage2.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage2.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article2">
-                <img lazy src="./images/ArticleImage5.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage5.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article2">
-                <img lazy src="./images/ArticleImage6.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage6.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article2">
-                <img lazy src="./images/ArticleImage2.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage2.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article2">
-                <img lazy src="./images/ArticleImage5.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage5.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
 
               <div class="article2">
-                <img lazy src="./images/ArticleImage5.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage5.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
+
               <div class="mag-ad">
                 <p>right now</p>
                 <span class="mag">
@@ -174,11 +215,14 @@
 
     <section>
       <hr />
-      <div class="wrapper">
-        <div class="inner-wrapper">
+      <div class="container">
+        <div class="content">
           <div class="case-study">
-            <p>case</p>
-            <h5 class="header-5">best of: british interiors</h5>
+            <div class="case-heading">
+              <p>case</p>
+              <h5 class="header-5">best of: british interiors</h5>
+            </div>
+
             <div class="case">
               <span class="img-ctn"
                 ><img src="./images/ArticleImage3.png" alt=""
@@ -200,41 +244,58 @@
 
           <div class="article-grp">
             <div class="article2">
-              <img lazy src="./images/ArticleImage5.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage5.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article">
-              <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                Inspirations: 8 dining rooms with a bench
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
-            </div>
-            <div class="article2">
-              <img lazy src="./images/ArticleImage2.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage4b.jpg" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  Inspirations: 8 dining rooms with a bench
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article2">
-              <img lazy src="./images/ArticleImage5.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage2.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
+            </div>
+
+            <div class="article2">
+              <span class="art-img">
+                <img src="./images/ArticleImage5.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
           </div>
         </div>
@@ -243,7 +304,7 @@
 
     <section class="special-edition">
       <h5 class="header-5">special edition destinations</h5>
-      <div class="mag-slide">
+      <div class="semag-slide">
         <img src="./images/Magazine2.png" alt="" />
         <img src="./images/Magazine1.png" alt="" />
         <img src="./images/Magazine3.png" alt="" />
@@ -260,93 +321,135 @@
       <p class="header-1">Inspiration</p>
       <div class="article-grp2 art-slide">
         <div class="article2">
-          <img lazy src="./images/ArticleImage2.png" alt="" />
-          <p class="pry-label">interior</p>
-          <h3 class="header-3">
-            The country house of gallery owners Jeremy and Aurelien
-            Pradier-Jeauneau
-          </h3>
-          <p class="sec-label">By Sophie Bouchet</p>
+          <span class="art-img">
+            <img src="./images/ArticleImage2.png" alt="" />
+          </span>
+          <span class="art-cont">
+            <p class="pry-label">interior</p>
+            <h3 class="header-3">
+              The country house of gallery owners Jeremy and Aurelien
+              Pradier-Jeauneau
+            </h3>
+            <p class="sec-label">By Sophie Bouchet</p>
+          </span>
         </div>
+
         <div class="article">
-          <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-          <p class="pry-label">interior</p>
-          <h3 class="header-3">Inspirations: 8 dining rooms with a bench</h3>
-          <p class="sec-label">By Sophie Bouchet</p>
-        </div>
-        <div class="article2">
-          <img lazy src="./images/ArticleImage2.png" alt="" />
-          <p class="pry-label">interior</p>
-          <h3 class="header-3">
-            The country house of gallery owners Jeremy and Aurelien
-            Pradier-Jeauneau
-          </h3>
-          <p class="sec-label">By Sophie Bouchet</p>
+          <span class="art-img">
+            <img src="./images/ArticleImage4b.jpg" alt="" />
+          </span>
+          <span class="art-cont">
+            <p class="pry-label">interior</p>
+            <h3 class="header-3">Inspirations: 8 dining rooms with a bench</h3>
+            <p class="sec-label">By Sophie Bouchet</p>
+          </span>
         </div>
 
         <div class="article2">
-          <img lazy src="./images/ArticleImage2.png" alt="" />
-          <p class="pry-label">interior</p>
-          <h3 class="header-3">
-            The country house of gallery owners Jeremy and Aurelien
-            Pradier-Jeauneau
-          </h3>
-          <p class="sec-label">By Sophie Bouchet</p>
+          <span class="art-img">
+            <img src="./images/ArticleImage2.png" alt="" />
+          </span>
+          <span class="art-cont">
+            <p class="pry-label">interior</p>
+            <h3 class="header-3">
+              The country house of gallery owners Jeremy and Aurelien
+              Pradier-Jeauneau
+            </h3>
+            <p class="sec-label">By Sophie Bouchet</p>
+          </span>
         </div>
 
         <div class="article2">
-          <img lazy src="./images/ArticleImage2.png" alt="" />
-          <p class="pry-label">interior</p>
-          <h3 class="header-3">
-            The country house of gallery owners Jeremy and Aurelien
-            Pradier-Jeauneau
-          </h3>
-          <p class="sec-label">By Sophie Bouchet</p>
+          <span class="art-img">
+            <img src="./images/ArticleImage5.png" alt="" />
+          </span>
+          <span class="art-cont">
+            <p class="pry-label">interior</p>
+            <h3 class="header-3">
+              The country house of gallery owners Jeremy and Aurelien
+              Pradier-Jeauneau
+            </h3>
+            <p class="sec-label">By Sophie Bouchet</p>
+          </span>
+        </div>
+
+        <div class="article2">
+          <span class="art-img">
+            <img src="./images/ArticleImage5.png" alt="" />
+          </span>
+          <span class="art-cont">
+            <p class="pry-label">interior</p>
+            <h3 class="header-3">
+              The country house of gallery owners Jeremy and Aurelien
+              Pradier-Jeauneau
+            </h3>
+            <p class="sec-label">By Sophie Bouchet</p>
+          </span>
         </div>
       </div>
+
       <button class="button">See more articles</button>
     </section>
 
     <section>
-      <div class="wrapper">
-        <div class="inner-wrapper">
+      <div class="container">
+        <div class="content">
           <div class="more-articles">
             <p>More Articles</p>
             <div class="article-grp">
               <div class="article2">
-                <img lazy src="./images/ArticleImage2.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage5.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
+
               <div class="article2">
-                <img lazy src="./images/ArticleImage2.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage5.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
+
               <div class="article2">
-                <img lazy src="./images/ArticleImage2.png" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  The country house of gallery owners Jeremy and Aurelien
-                  Pradier-Jeauneau
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage5.png" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    The country house of gallery owners Jeremy and Aurelien
+                    Pradier-Jeauneau
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
+
               <div class="article">
-                <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-                <p class="pry-label">interior</p>
-                <h3 class="header-3">
-                  Inspirations: 8 dining rooms with a bench
-                </h3>
-                <p class="sec-label">By Sophie Bouchet</p>
+                <span class="art-img">
+                  <img src="./images/ArticleImage4b.jpg" alt="" />
+                </span>
+                <span class="art-cont">
+                  <p class="pry-label">interior</p>
+                  <h3 class="header-3">
+                    Inspirations: 8 dining rooms with a bench
+                  </h3>
+                  <p class="sec-label">By Sophie Bouchet</p>
+                </span>
               </div>
             </div>
           </div>
@@ -355,8 +458,8 @@
     </section>
 
     <section class="main-mag">
-      <div class="wrapper">
-        <div class="inner-wrapper">
+      <div class="container">
+        <div class="content">
           <div class="mag-showcase">
             <p class="mag-issue">in milk decoration #48</p>
             <span class="mag1">
@@ -383,92 +486,131 @@
     </section>
 
     <section>
-      <div class="wrapper">
-        <div class="inner-wrapper journey-wrapper">
+      <div class="container">
+        <div class="content journey-wrapper">
           <div class="journey">
             <span>
               <img src="./images/HeroImage2.png" alt="" />
             </span>
-            <p class="pry-label">journey</p>
-            <h1 class="header-1">Casa Quatro: holiday home in the Algarve</h1>
-            <p class="sec-label">By Sophie Bouchet</p>
-            <p>
-              theAddresses is opening a fourth house, to rent for holidays,
-              located in a small town in the south of Portugal.
-            </p>
-            <button class="button">Discover</button>
+
+            <div class="journey-info">
+              <p class="pry-label">journey</p>
+              <h1 class="header-1">Casa Quatro: holiday home in the Algarve</h1>
+              <p class="sec-label">By Sophie Bouchet</p>
+              <p class="art-summ">
+                theAddresses is opening a fourth house, to rent for holidays,
+                located in a small town in the south of Portugal.
+              </p>
+              <button class="button">Discover</button>
+            </div>
           </div>
+
           <div class="article-grp">
             <div class="article">
-              <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                Inspirations: 8 dining rooms with a bench
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage4b.jpg" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  Inspirations: 8 dining rooms with a bench
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article2">
-              <img lazy src="./images/ArticleImage5.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage5.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article2">
-              <img lazy src="./images/ArticleImage6.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage5.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article2">
-              <img lazy src="./images/ArticleImage5.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage5.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article">
-              <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                Inspirations: 8 dining rooms with a bench
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage4b.jpg" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  Inspirations: 8 dining rooms with a bench
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article">
-              <img lazy src="./images/ArticleImage4b.jpg" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                Inspirations: 8 dining rooms with a bench
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage4b.jpg" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  Inspirations: 8 dining rooms with a bench
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
 
             <div class="article2">
-              <img lazy src="./images/ArticleImage2.png" alt="" />
-              <p class="pry-label">interior</p>
-              <h3 class="header-3">
-                The country house of gallery owners Jeremy and Aurelien
-                Pradier-Jeauneau
-              </h3>
-              <p class="sec-label">By Sophie Bouchet</p>
+              <span class="art-img">
+                <img src="./images/ArticleImage2.png" alt="" />
+              </span>
+              <span class="art-cont">
+                <p class="pry-label">interior</p>
+                <h3 class="header-3">
+                  The country house of gallery owners Jeremy and Aurelien
+                  Pradier-Jeauneau
+                </h3>
+                <p class="sec-label">By Sophie Bouchet</p>
+              </span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <div class="container">
+        <div class="catwrapper">
           <div class="category">
             <p>Explore our categories</p>
+
             <div class="categories">
               <div>
                 <span>
@@ -509,28 +651,28 @@
       </div>
     </section>
 
-    <section class="news">
-      <div class="newsletter">
-        <p>Every Monday</p>
-        <p class="header-1">
-          The best styles & inspirations from Milk Decoration
-        </p>
-        <form action="">
-          <input type="email" name="" id="" placeholder="Your email" />
-          <button class="button">Subscribe</button>
-        </form>
-        <p>
-          By providing your email you agree to receive the MilK Decoration
-          newsletter and you have read our confidentiality policy . You can
-          unsubscribe at any time by clicking on the unsubscribe link in all our
-          emails.
-        </p>
-      </div>
-    </section>
-
     <footer>
-      <div class="wrapper">
-        <div class="inner-wrapper box1">
+      <div class="news">
+        <div class="newsletter">
+          <p>Every Monday</p>
+          <p class="header-1">
+            The best styles & inspirations from Milk Decoration
+          </p>
+          <form action="">
+            <input type="email" name="" id="" placeholder="Your email" />
+            <button class="button">Subscribe</button>
+          </form>
+          <p>
+            By providing your email you agree to receive the MilK Decoration
+            newsletter and you have read our confidentiality policy . You can
+            unsubscribe at any time by clicking on the unsubscribe link in all
+            our emails.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="content box1">
           <!-- Mag + Logo -->
           <div>
             <div class="mag-part">
@@ -553,8 +695,8 @@
 
       <!-- Links -->
       <div class="links">
-        <div class="wrapper">
-          <div class="inner-wrapper box2">
+        <div class="container">
+          <div class="content box2">
             <ul class="grp1">
               <li>Design</li>
               <li>Selection</li>

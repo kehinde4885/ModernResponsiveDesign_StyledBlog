@@ -49,6 +49,15 @@ body {
   font-family: var(--mark-regular);
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+}
+
+.content {
+  grid-column: 2/3;
+}
+
 .pry-label {
   font-family: var(--mark-regular);
   text-transform: uppercase;
@@ -59,6 +68,7 @@ body {
 .header-1 {
   font-size: var(--header-1);
   font-family: var(--larken-light);
+  line-height: normal;
 }
 
 .header-2 {
@@ -98,7 +108,7 @@ body {
   border-color: var(--white);
   border: 1px solid;
   color: inherit;
-  padding: 1rem 2.3125rem;
+  padding: .6875rem 1.25rem;
 }
 
 .wrapper {
@@ -119,35 +129,20 @@ body {
   margin-top: 50px;
 }
 
-.article > img {
-  aspect-ratio: 1.91/1;
-  object-fit: cover;
-}
-
-.article2 > img {
-  aspect-ratio: 4/5;
-  object-fit: cover;
-}
-
-.article-grp {
-  display: flex;
-  flex-direction: column;
-  row-gap: 60px;
-}
 /*  */
 
 nav > .hamburger,
 .search {
-  width: 18px;
-  height: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 nav > .logo {
-  width: 113px;
+  width: 7.063rem;
 }
 
 .nav-menu {
-  padding: 10px 0;
+  padding: 0.625rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,7 +166,7 @@ hr {
 
 .hero {
   color: var(--white);
-  height: calc(100vh - 113.41px);
+  height: calc(100vh - 7.088rem);
   width: 100%;
   background-image: linear-gradient(
       180deg,
@@ -194,6 +189,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 
 .hero > div > h1 {
@@ -201,32 +197,45 @@ hr {
   font-family: var(--larken-light);
 }
 
-.hero > div > button {
-  margin-top: 36px;
-}
-
-.hero > div > span {
-  margin-top: auto;
-  margin-bottom: 30px;
-}
-
 /*  */
-
-.showcase > :not([hidden]) ~ :not([hidden]) {
-  margin-top: 21px;
+.grouped {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4.813rem;
 }
 
 .showcase {
-  text-align: center;
-  margin-bottom: 77px;
-}
-.showcase > .ft-img img {
-  aspect-ratio: 1/1.7;
+  display: flex;
+  flex-direction: column;
 }
 
-.showcase > button {
-  border-color: var(--black);
-  color: var(--black);
+.showcase > .ft-img {
+  max-height: 40.563rem;
+  width: 100%;
+}
+
+.showcase > .ft-img img {
+  aspect-ratio: 1/1.7;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.ft-cont {
+  min-height: 25rem;
+  max-height: 43.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.688rem;
 }
 
 .featured > .sec-label {
@@ -234,25 +243,56 @@ hr {
 }
 
 /* Look in to css selectors to isolate children */
-.article2 > p,
-.article > p {
-  margin-top: 10px;
+.article-grp {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.75rem;
 }
 
-.article > h3,
-.article2 > h3 {
-  margin-top: 8px;
-  margin-bottom: 16px;
+.article {
+  display: flex;
+  flex-direction: column;
 }
+
+.article .art-img > img {
+  aspect-ratio: 1.91/1;
+  object-fit: cover;
+}
+
+.article .art-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 8.438rem;
+}
+
+.article2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.article2 .art-img > img {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.article2 .art-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 10.625rem;
+}
+
+/*  */
 
 .mag-ad {
-  padding: 2.25rem 0;
+  height: 652px;
   background-color: #4b4b4b;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*justify-items: center; */
+  justify-content: space-around;
 }
 
 /* this picks the first immediate child element that
@@ -260,9 +300,10 @@ is not hidden in the parent element with class .mag-ad */
 
 /* the second half from the ~ combinator called the subsequent sibling combinator
 Picks all elements that follow the above element that are also not hidden */
-.mag-ad > :not([hidden]) ~ :not([hidden]) {
+
+/* .mag-ad > :not([hidden]) ~ :not([hidden]) {
   margin-top: 1.5rem;
-}
+} */
 
 .mag-ad > p:first-child {
   text-transform: uppercase;
@@ -272,27 +313,40 @@ Picks all elements that follow the above element that are also not hidden */
   text-transform: capitalize;
 }
 
-.mag-ad > .mag {
-  width: 60%;
+.mag {
+  height: 60%;
+}
+
+.mag > img {
+  height: 100%;
 }
 
 /* Case Study */
+.content:has(> .case-study) {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.75rem;
+}
 
 .case-study {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+  row-gap: 4rem;
 }
 
-.case-study > p {
+.case-heading {
+  text-align: center;
+}
+
+.case-heading > p {
   font-size: 0.875rem;
   text-transform: uppercase;
   color: var(--black-tint-text);
 }
 
 .case {
-  margin: 64px 0;
   display: flex;
   flex-direction: column;
   row-gap: 64px;
@@ -321,14 +375,14 @@ Picks all elements that follow the above element that are also not hidden */
 .special-edition {
   text-align: center;
   overflow-x: hidden;
+  height: 34.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.special-edition > p {
-  margin-top: 20px;
-  margin-bottom: 35px;
-}
-
-.mag-slide {
+.semag-slide {
   display: flex;
 }
 
@@ -336,32 +390,65 @@ Picks all elements that follow the above element that are also not hidden */
 
 .editor {
   background-color: var(--grey);
+  overflow: hidden;
+  height: 55.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+
+
 .editor > p:first-child {
   text-transform: uppercase;
   color: var(--black-tint-text);
+  text-align: center;
+}
+
+.editor > .header-1 {
+  text-align: center;
 }
 
 .art-slide {
+  margin-left: 24px;
+  display: flex;
+  column-gap: 2.188rem;
 }
 
+.art-slide >  div{
+  width: max-content;
+  min-width: 14.69rem;
+}
+
+.editor > .button{
+  align-self: center;
+}
+
+
 /*  */
+
+.more-articles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.75rem;
+}
 
 .more-articles > p {
   text-transform: uppercase;
   color: var(--black-tint-text);
-  margin-bottom: 3.75rem;
 }
 
 /*  */
 .main-mag {
   background-color: var(--silver-bg);
 }
+
 .mag-showcase {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-block: 45px;
+  /* height: 1250px;
+  justify-content: space-evenly; */
 }
 
 .mag-showcase > .button {
@@ -394,22 +481,52 @@ Picks all elements that follow the above element that are also not hidden */
 .journey-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 6.25rem;
 }
 
 .journey {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  row-gap: 3.25rem;
 }
 
-.journey > .header-1 {
+.journey-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 17.813rem;
+  justify-content: space-between;
+
+}
+
+.journey-info > .header-1 {
   text-align: center;
+}
+
+.journey-info > .art-summ {
+  text-align: center;
+  width: 20em;
 }
 
 /*  */
 
+.catwrapper {
+  grid-column: 1/-1;
+  
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.75rem ;
+ 
+}
+
 .category {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.188rem;
+  margin-left: 1.5rem;
 }
 
 .category > p {
@@ -419,17 +536,16 @@ Picks all elements that follow the above element that are also not hidden */
 
 .categories {
   display: flex;
-  overflow-x: hidden;
   column-gap: 40px;
 }
 
 .categories > div {
-  width: max-content;
-  max-width: 18.75rem;
+  /* max-width: 13.75rem; */
+  max-width: 17.68rem;
   flex-shrink: 0;
-}
-
-.categories > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.875rem;
 }
 
 /*  */
@@ -442,6 +558,7 @@ Picks all elements that follow the above element that are also not hidden */
   /* justify-content: center; */
   height: 400px;
   justify-content: space-evenly;
+  margin-inline: 1.5rem;
 }
 
 .socials > p {
@@ -458,22 +575,23 @@ Picks all elements that follow the above element that are also not hidden */
   margin-top: 56px;
 }
 
-.socials > div > p {
-}
-
 .news {
   background-color: var(--charcoal);
   color: var(--white);
   display: flex;
   justify-content: center;
+  height: 28.25rem;
+  align-items: center;
+  height: 452px;
 }
 
 .newsletter {
-  height: 452px;
+  
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 90%;
+  justify-content: space-between;
+  width: 84%;
+  height: 20.875rem;
 }
 
 .newsletter > p:first-child {
@@ -483,11 +601,10 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .newsletter > .header-1 {
+  font-size: 1.438rem;
   text-align: center;
 }
 
-.newsletter > form {
-}
 
 .newsletter > form {
   display: flex;
@@ -506,6 +623,9 @@ Picks all elements that follow the above element that are also not hidden */
   background-color: transparent;
 }
 
+.newsletter > p:last-child{
+  font-size: .875rem;
+}
 /* footer */
 
 footer {
@@ -515,8 +635,8 @@ footer {
 .box1 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 50px 0;
+  justify-content: space-evenly;
+  height: 369px;
 }
 
 .box1 > div:nth-of-type(1) {
@@ -526,7 +646,7 @@ footer {
 }
 
 .mag-part {
-  max-width: 240px;
+  max-width: 11.625rem;
   width: fit-content;
 }
 
@@ -534,6 +654,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.logo-part > img {
+  width: 9.188rem;
 }
 
 .logo-part > p {
@@ -556,31 +682,30 @@ footer {
 }
 
 .box2 {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50%);
   text-transform: uppercase;
-  flex-wrap: wrap;
   row-gap: 50px;
-  padding: 50px 0;
+  height: 28.813rem;
+  align-content: center;
+  
 }
 
-.grp1{
+.grp1 {
   font-size: var(--pry-label);
   font-family: var(--mark-medium);
-  flex-basis: 50%;
-  width: max-content;
-  flex-shrink: 0;
+  
   display: flex;
   flex-direction: column;
   row-gap: 21px;
 }
 
-.grp2{
+.grp2 {
   font-size: var(--pry-label);
-  flex-shrink: 0;
-  flex-basis: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 21px;
+  grid-column: 1/-1;
 }
 
 /* REMEMBER TO CHANGE PIXELS TO REMS */
