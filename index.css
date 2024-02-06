@@ -5,6 +5,9 @@
  * @format
  */
 
+/* For Responsive Design it is all about the CSS
+ So this is where i loop through to write my Blog */
+
 @import "reset.css";
 
 /* Custom Fonts Imports */
@@ -58,6 +61,16 @@ body {
   grid-column: 2/3;
 }
 
+.content2 {
+  grid-column: 1/-1;
+}
+
+@media (min-width: 768px) {
+  .content2 {
+    grid-column: 2/3;
+  }
+}
+
 .pry-label {
   font-family: var(--mark-regular);
   text-transform: uppercase;
@@ -108,17 +121,7 @@ body {
   border-color: var(--white);
   border: 1px solid;
   color: inherit;
-  padding: 0.6875rem 1.25rem;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 24px;
-}
-
-.inner-wrapper {
-  grid-column: 1/-1;
+  padding: 1.125rem 1.75rem;
 }
 
 .layout {
@@ -131,6 +134,8 @@ body {
 
 /*  */
 
+/*  */
+
 .nav-menu {
   padding: 0.625rem 0;
   display: flex;
@@ -138,26 +143,37 @@ body {
   align-items: center;
 }
 
-.nav-menu > .hamburger,
+.hamburger-div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hamburger,
 .search {
   width: 1.125rem;
   height: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .hamburger,
+  .search {
+    width: max(min(7%, 2.375rem), 1.125rem);
+    height: max(min(7%, 2.375rem), 1.125rem);
+  }
 }
 
 .nav-menu > .logo {
   width: 7.063rem;
 }
 
-.nav-menu > div {
+.button-div {
   display: flex;
   align-items: center;
 }
 
-.nav-menu > div > .button{
+.button-div > .button {
   display: none;
 }
-
-
 
 @media (min-width: 768px) {
   .nav-menu > .hamburger {
@@ -169,21 +185,18 @@ body {
     justify-content: center;
   }
 
-  .nav-menu > div {
+  .button-div {
     column-gap: 2.313rem;
     justify-content: end;
   }
 
-  .nav-menu > div > .button{
+  .button-div > .button {
     display: block;
   }
-  
 
   .nav-menu > :not([hidden]) {
     width: calc(100% / 3);
   }
-
-
 }
 
 hr {
@@ -197,15 +210,32 @@ hr {
   text-transform: uppercase;
   font-family: var(--mark-medium);
   height: 2.3125rem;
-  font-size: var(--nav-text);
+  font-size: max(min(0.83333vw, 0.75rem), var(--nav-text));
+  max-width: 40rem;
+}
+
+@media (min-width: 688px) {
+  .nav-links {
+    margin-inline: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-links {
+      height: 3.375rem;
+    }
+  }
 }
 
 /*  */
 
+section:has(.hero) > .container {
+  height: inherit;
+}
+
 .hero {
   color: var(--white);
-  height: calc(100vh - 7.088rem);
   width: 100%;
+  grid-column: 1/-1;
   background-image: linear-gradient(
       180deg,
       rgba(16, 16, 16, 0) 68.5%,
@@ -221,18 +251,32 @@ hr {
   justify-content: flex-end;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    grid-column: 2/3;
+  }
+}
+
 .hero > div {
   text-align: center;
   height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .hero > div > h1 {
-  font-size: var(--header-1);
+  /* font-size: var(--header-1); */
   font-family: var(--larken-light);
+  line-height: normal;
+
+  /* This means at minimum font size is --header1(33px), The relative part of the equation
+  min(5.3vw,4.813rem) is resolved to give the increasing value for the font size as viewport changes
+  but it can never give us a value bigger than 4.813rem(77px) + it's value would keep
+  reducing from 5.3vw as the
+   */
+  font-size: max(min(5.3vw, 4.813rem), var(--header-1));
 }
 
 /*  */
