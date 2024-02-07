@@ -33,16 +33,16 @@
   --larken-light: "larken-lightregular";
   --mark-regular: "mark_proregular";
   --mark-medium: "mark_promedium";
-  --nav-text: 0.625rem;
+  --nav-text: .625rem;
   --header-1: 2.1rem;
   --header-2: 1.875rem;
   --header-3: 1.5rem;
   --header-4: 1.375rem;
   --header-5: 1.375rem;
-  --button-text: 0.875rem;
-  --pry-label: 0.625rem;
-  --sec-label: 0.75rem;
-  --body: 0.938rem;
+  --button-text: .875rem;
+  --pry-label: .625rem;
+  --sec-label: .75rem;
+  --body: .938rem;
 }
 
 /* Utilities */
@@ -54,7 +54,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 24px 1fr 24px;
+  grid-template-columns: 1.5rem 1fr 1.5rem;
 }
 
 .content {
@@ -65,7 +65,7 @@ body {
   grid-column: 1/-1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .content2 {
     grid-column: 2/3;
   }
@@ -119,9 +119,9 @@ body {
   font-size: var(--button-text);
   background-color: transparent;
   border-color: var(--white);
-  border: 1px solid;
+  border: .063rem solid;
   color: inherit;
-  padding: 1.125rem 1.75rem;
+  padding: 18px 28px;
 }
 
 .layout {
@@ -129,7 +129,7 @@ body {
 }
 
 .layout > section ~ :not([hidden]) {
-  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 
 /*  */
@@ -137,7 +137,7 @@ body {
 /*  */
 
 .nav-menu {
-  padding: 0.625rem 0;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -150,20 +150,20 @@ body {
 
 .hamburger,
 .search {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 18px;
+  height: 18px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .hamburger,
   .search {
-    width: max(min(7%, 2.375rem), 1.125rem);
-    height: max(min(7%, 2.375rem), 1.125rem);
+    width: max(min(7%, 38px), 18px);
+    height: max(min(7%, 38px), 18px);
   }
 }
 
 .nav-menu > .logo {
-  width: 7.063rem;
+  width: 113.008px;
 }
 
 .button-div {
@@ -175,7 +175,7 @@ body {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .nav-menu > .hamburger {
     display: flex;
   }
@@ -186,7 +186,7 @@ body {
   }
 
   .button-div {
-    column-gap: 2.313rem;
+    column-gap: 37.008px;
     justify-content: end;
   }
 
@@ -209,19 +209,19 @@ hr {
   align-items: center;
   text-transform: uppercase;
   font-family: var(--mark-medium);
-  height: 2.3125rem;
-  font-size: max(min(0.83333vw, 0.75rem), var(--nav-text));
-  max-width: 40rem;
+  height: 37.008px;
+  font-size: max(min(0.83333vw, 12px), var(--nav-text));
+  max-width: 640px;
 }
 
-@media (min-width: 688px) {
+@media (min-width: 43rem) {
   .nav-links {
     margin-inline: auto;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 64rem) {
     .nav-links {
-      height: 3.375rem;
+      height: 54px;
     }
   }
 }
@@ -251,7 +251,7 @@ section:has(.hero) > .container {
   justify-content: flex-end;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .hero {
     grid-column: 2/3;
   }
@@ -271,42 +271,48 @@ section:has(.hero) > .container {
   font-family: var(--larken-light);
   line-height: normal;
 
-  /* This means at minimum font size is --header1(33px), The relative part of the equation
-  min(5.3vw,4.813rem) is resolved to give the increasing value for the font size as viewport changes
-  but it can never give us a value bigger than 4.813rem(77px) + it's value would keep
+  /* This means at minimum font size is --header1(2.063rem), The relative part of the equation
+  min(5.3vw,77.008px) is resolved to give the increasing value for the font size as viewport changes
+  but it can never give us a value bigger than 77.008px(4.813rem) + it's value would keep
   reducing from 5.3vw as the
    */
-  font-size: max(min(5.3vw, 4.813rem), var(--header-1));
+  font-size: max(min(5.3vw, 77.008px), var(--header-1));
 }
 
+/* FROM HERE  ********* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 /*  */
 .grouped {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   row-gap: 4.813rem;
+  /* max(min(relative unit || value , maximum value ),minimum value/starting vakue) */
+  column-gap: max(min(6.806vw, 6.125rem), 3.563rem);
 }
 
 .showcase {
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
+
 }
 
-.showcase > .ft-img {
-  max-height: 40.563rem;
-  width: 100%;
+@media (min-width: 851px) {
+  .showcase {
+    flex-basis: 25.625rem;
+  }
 }
 
-.showcase > .ft-img img {
+.showcase > .sc-img img {
   aspect-ratio: 1/1.7;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: top;
 }
 
-.ft-cont {
-  min-height: 25rem;
-  max-height: 43.75rem;
+.sc-cont {
+  /* min-height: 400px;
+  max-height: 700px; */
+  /* max(min(relative unit || value , maximum value ),minimum value/starting vakue) */
+
+  min-height: max(min(48.6vw, 43.75rem), 25rem);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -314,21 +320,42 @@ section:has(.hero) > .container {
   text-align: center;
 }
 
+.sc-cont > .header-2 {
+  /* max(increasing relative value, minimum value) */
+  /* max(min(relative unit || value , maximum value ),minimum value/starting vakue) */
+  font-size: max(min(3.47vw, 3.125rem), var(--header-2));
+}
+
+.sc-cont > .pry-label {
+  font-size: max(min(0.83333vw, .75rem), var(--pry-label));
+}
+
+.sc-cont > .sec-label {
+  font-size: max(min(1.1111vw, 1rem), var(--sec-label));
+}
+
+.sc-cont > .art-summ {
+  font-size: max(min(1.18055vw, 1.063rem), var(--body));
+}
+
 .featured {
   display: flex;
   flex-direction: column;
   row-gap: 3.688rem;
+  flex-basis: 20.938rem;
+  flex-grow: 1;
 }
 
 .featured > .sec-label {
   text-transform: uppercase;
+  font-size: max(min(1.1111vw, 1rem), var(--sec-label));
 }
 
 /* Look in to css selectors to isolate children */
 .article-grp {
   display: flex;
   flex-direction: column;
-  row-gap: 3.75rem;
+  row-gap: 60px;
 }
 
 .article {
@@ -345,7 +372,7 @@ section:has(.hero) > .container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 8.438rem;
+  height: 135.008px;
 }
 
 .article2 {
@@ -362,13 +389,15 @@ section:has(.hero) > .container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 10.625rem;
+  height: 170px;
 }
+
+/* TO HERE!!!!!!!!!*************************** */
 
 /*  */
 
 .mag-ad {
-  height: 652px;
+  height: 40.75rem;
   background-color: #4b4b4b;
   color: #fff;
   display: flex;
@@ -384,7 +413,7 @@ is not hidden in the parent element with class .mag-ad */
 Picks all elements that follow the above element that are also not hidden */
 
 /* .mag-ad > :not([hidden]) ~ :not([hidden]) {
-  margin-top: 1.5rem;
+  margin-top: 24px;
 } */
 
 .mag-ad > p:first-child {
@@ -407,15 +436,15 @@ Picks all elements that follow the above element that are also not hidden */
 .content:has(> .case-study) {
   display: flex;
   flex-direction: column;
-  row-gap: 3.75rem;
+  row-gap: 60px;
 }
 
 .case-study {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
-  row-gap: 4rem;
+  padding-top: .625rem;
+  row-gap: 64px;
 }
 
 .case-heading {
@@ -423,7 +452,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .case-heading > p {
-  font-size: 0.875rem;
+  font-size: 14px;
   text-transform: uppercase;
   color: var(--black-tint-text);
 }
@@ -431,7 +460,7 @@ Picks all elements that follow the above element that are also not hidden */
 .case {
   display: flex;
   flex-direction: column;
-  row-gap: 64px;
+  row-gap: 4rem;
 }
 
 .case > .img-ctn {
@@ -440,7 +469,7 @@ Picks all elements that follow the above element that are also not hidden */
 
 .case .about-case > h2 {
   font-family: var(--larken-light);
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 1.3;
 }
 
@@ -449,7 +478,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .about-case > :not([hidden]) ~ :not([hidden]) {
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 /*  */
@@ -457,7 +486,7 @@ Picks all elements that follow the above element that are also not hidden */
 .special-edition {
   text-align: center;
   overflow-x: hidden;
-  height: 34.875rem;
+  height: 558px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -473,7 +502,7 @@ Picks all elements that follow the above element that are also not hidden */
 .editor {
   background-color: var(--grey);
   overflow: hidden;
-  height: 55.625rem;
+  height: 890px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -490,14 +519,14 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .art-slide {
-  margin-left: 24px;
+  margin-left: 1.5rem;
   display: flex;
-  column-gap: 2.188rem;
+  column-gap: 35.008px;
 }
 
 .art-slide > div {
   width: max-content;
-  min-width: 14.69rem;
+  min-width: 235.04px;
 }
 
 .editor > .button {
@@ -509,7 +538,7 @@ Picks all elements that follow the above element that are also not hidden */
 .more-articles {
   display: flex;
   flex-direction: column;
-  row-gap: 3.75rem;
+  row-gap: 60px;
 }
 
 .more-articles > p {
@@ -526,16 +555,16 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-block: 45px;
-  /* height: 1250px;
+  padding-block: 2.813rem;
+  /* height: 78.125rem;
   justify-content: space-evenly; */
 }
 
 .mag-showcase > .button {
-  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 .mag-showcase > .sec-label {
-  margin-top: 10px;
+  margin-top: .625rem;
 }
 .mag-issue {
   text-transform: uppercase;
@@ -544,13 +573,13 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .mag1 {
-  margin-block: 55px;
+  margin-block: 3.438rem;
 }
 
 .mag-desc {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 45px;
+  margin-top: 1.875rem;
+  margin-bottom: 2.813rem;
 }
 
 .mags {
@@ -561,7 +590,7 @@ Picks all elements that follow the above element that are also not hidden */
 .journey-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 6.25rem;
+  row-gap: 100px;
 }
 
 .journey {
@@ -569,14 +598,14 @@ Picks all elements that follow the above element that are also not hidden */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  row-gap: 3.25rem;
+  row-gap: 52px;
 }
 
 .journey-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 17.813rem;
+  height: 285.008px;
   justify-content: space-between;
 }
 
@@ -597,14 +626,14 @@ Picks all elements that follow the above element that are also not hidden */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  row-gap: 3.75rem;
+  row-gap: 60px;
 }
 
 .category {
   display: flex;
   flex-direction: column;
-  row-gap: 2.188rem;
-  margin-left: 1.5rem;
+  row-gap: 35.008px;
+  margin-left: 24px;
 }
 
 .category > p {
@@ -614,16 +643,16 @@ Picks all elements that follow the above element that are also not hidden */
 
 .categories {
   display: flex;
-  column-gap: 40px;
+  column-gap: 2.5rem;
 }
 
 .categories > div {
-  /* max-width: 13.75rem; */
-  max-width: 17.68rem;
+  /* max-width: 220px; */
+  max-width: 282.88px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  row-gap: 1.875rem;
+  row-gap: 30px;
 }
 
 /*  */
@@ -634,9 +663,9 @@ Picks all elements that follow the above element that are also not hidden */
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  height: 400px;
+  height: 25rem;
   justify-content: space-evenly;
-  margin-inline: 1.5rem;
+  margin-inline: 24px;
 }
 
 .socials > p {
@@ -650,7 +679,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .socials > div > :not([hidden]) ~ :not([hidden]) {
-  margin-top: 56px;
+  margin-top: 3.5rem;
 }
 
 .news {
@@ -658,9 +687,9 @@ Picks all elements that follow the above element that are also not hidden */
   color: var(--white);
   display: flex;
   justify-content: center;
-  height: 28.25rem;
-  align-items: center;
   height: 452px;
+  align-items: center;
+  height: 28.25rem;
 }
 
 .newsletter {
@@ -668,7 +697,7 @@ Picks all elements that follow the above element that are also not hidden */
   flex-direction: column;
   justify-content: space-between;
   width: 84%;
-  height: 20.875rem;
+  height: 334px;
 }
 
 .newsletter > p:first-child {
@@ -678,7 +707,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .newsletter > .header-1 {
-  font-size: 1.438rem;
+  font-size: 23.008px;
   text-align: center;
 }
 
@@ -687,7 +716,7 @@ Picks all elements that follow the above element that are also not hidden */
   color: var(--black);
   align-items: center;
   background-color: var(--silver-bg);
-  padding: 16px 14px;
+  padding: 1rem .875rem;
 }
 
 .newsletter > form > input:focus-visible {
@@ -700,7 +729,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .newsletter > p:last-child {
-  font-size: 0.875rem;
+  font-size: 14px;
 }
 /* footer */
 
@@ -712,7 +741,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 369px;
+  height: 23.063rem;
 }
 
 .box1 > div:nth-of-type(1) {
@@ -722,7 +751,7 @@ footer {
 }
 
 .mag-part {
-  max-width: 11.625rem;
+  max-width: 186px;
   width: fit-content;
 }
 
@@ -735,12 +764,12 @@ footer {
 }
 
 .logo-part > img {
-  width: 9.188rem;
+  width: 147.008px;
 }
 
 .logo-part > p {
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: var(--larken-light);
   color: var(--black);
 }
@@ -761,8 +790,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, 50%);
   text-transform: uppercase;
-  row-gap: 50px;
-  height: 28.813rem;
+  row-gap: 3.125rem;
+  height: 461.008px;
   align-content: center;
 }
 
@@ -772,14 +801,14 @@ footer {
 
   display: flex;
   flex-direction: column;
-  row-gap: 21px;
+  row-gap: 1.313rem;
 }
 
 .grp2 {
   font-size: var(--pry-label);
   display: flex;
   flex-direction: column;
-  row-gap: 21px;
+  row-gap: 1.313rem;
   grid-column: 1/-1;
 }
 
