@@ -33,16 +33,16 @@
   --larken-light: "larken-lightregular";
   --mark-regular: "mark_proregular";
   --mark-medium: "mark_promedium";
-  --nav-text: .625rem;
+  --nav-text: 0.625rem;
   --header-1: 2.1rem;
   --header-2: 1.875rem;
   --header-3: 1.5rem;
   --header-4: 1.375rem;
   --header-5: 1.375rem;
-  --button-text: .875rem;
-  --pry-label: .625rem;
-  --sec-label: .75rem;
-  --body: .938rem;
+  --button-text: 0.875rem;
+  --pry-label: 0.625rem;
+  --sec-label: 0.75rem;
+  --body: 0.938rem;
 }
 
 /* Utilities */
@@ -119,13 +119,9 @@ body {
   font-size: var(--button-text);
   background-color: transparent;
   border-color: var(--white);
-  border: .063rem solid;
+  border: 0.063rem solid;
   color: inherit;
-  padding: 18px 28px;
-}
-
-.layout {
-  display: grid;
+  padding: 14px 28px;
 }
 
 .layout > section ~ :not([hidden]) {
@@ -160,6 +156,9 @@ body {
     width: max(min(7%, 38px), 18px);
     height: max(min(7%, 38px), 18px);
   }
+
+  /* Note : this function is best used when things grow naturally without layout change
+  a good example is font-size */
 }
 
 .nav-menu > .logo {
@@ -244,7 +243,7 @@ section:has(.hero) > .container {
     url(./images/HeroImage.png);
   background-size: cover;
   background-position: center;
-  /* background-repeat: no-repeat; */
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,55 +278,57 @@ section:has(.hero) > .container {
   font-size: max(min(5.3vw, 77.008px), var(--header-1));
 }
 
-/* FROM HERE  ********* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*  */
+
 .grouped {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
   row-gap: 4.813rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "sc"
+  "ft"
+  ;
+  
+
   /* max(min(relative unit || value , maximum value ),minimum value/starting vakue) */
-  column-gap: max(min(6.806vw, 6.125rem), 3.563rem);
+  /* column-gap: max(min(6.806vw, 6.125rem), 3.563rem); */
 }
+
+
 
 .showcase {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
-
+  row-gap: 1.313rem;
+  grid-area: sc;
+  
 }
 
-@media (min-width: 851px) {
-  .showcase {
-    flex-basis: 25.625rem;
+@media (min-width:768px) {
+  .grouped{
+    grid-template-columns: 3fr 6fr;
+    grid-template-areas: 
+    "sc ft";
+    column-gap: max(min(3.47vw,3.125rem),1.875rem);
   }
-}
 
-.showcase > .sc-img img {
-  aspect-ratio: 1/1.7;
+  
 }
 
 .sc-cont {
-  /* min-height: 400px;
-  max-height: 700px; */
-  /* max(min(relative unit || value , maximum value ),minimum value/starting vakue) */
-
-  min-height: max(min(48.6vw, 43.75rem), 25rem);
   display: flex;
   flex-direction: column;
+  row-gap: 1.313rem;
   justify-content: space-around;
   align-items: center;
   text-align: center;
 }
 
 .sc-cont > .header-2 {
-  /* max(increasing relative value, minimum value) */
-  /* max(min(relative unit || value , maximum value ),minimum value/starting vakue) */
   font-size: max(min(3.47vw, 3.125rem), var(--header-2));
 }
 
 .sc-cont > .pry-label {
-  font-size: max(min(0.83333vw, .75rem), var(--pry-label));
+  font-size: max(min(0.83333vw, 0.75rem), var(--pry-label));
 }
 
 .sc-cont > .sec-label {
@@ -343,53 +344,68 @@ section:has(.hero) > .container {
   flex-direction: column;
   row-gap: 3.688rem;
   flex-basis: 20.938rem;
-  flex-grow: 1;
+  grid-area: ft;
 }
+
 
 .featured > .sec-label {
   text-transform: uppercase;
   font-size: max(min(1.1111vw, 1rem), var(--sec-label));
 }
 
-/* Look in to css selectors to isolate children */
 .article-grp {
   display: flex;
   flex-direction: column;
   row-gap: 60px;
 }
 
+
+@media (min-width:768px) {
+  .featured > .article-grp{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: max(min(3.47vw,3.125rem),1.875rem);
+  }
+
+  .featured > .article-grp> div:first-child{
+    grid-column: span 2;
+  }
+
+  .featured > .article-grp> div:last-child{
+    grid-column: span 2;
+  }
+  
+}
+
+
 .article {
   display: flex;
   flex-direction: column;
+  row-gap: 1.625rem;
 }
 
-.article .art-img > img {
-  aspect-ratio: 1.91/1;
-  object-fit: cover;
-}
 
 .article .art-cont {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 135.008px;
+  row-gap: .563rem;
+  
 }
 
 .article2 {
   display: flex;
   flex-direction: column;
+  row-gap: 1.625rem;
 }
 
-.article2 .art-img > img {
-  aspect-ratio: 4/5;
-  object-fit: cover;
-}
 
 .article2 .art-cont {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 170px;
+  row-gap: .563rem;
+  
 }
 
 /* TO HERE!!!!!!!!!*************************** */
@@ -397,13 +413,14 @@ section:has(.hero) > .container {
 /*  */
 
 .mag-ad {
-  height: 40.75rem;
   background-color: #4b4b4b;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  row-gap: 1.5rem;
+  padding-block: 24px;
 }
 
 /* this picks the first immediate child element that
@@ -425,7 +442,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .mag {
-  height: 60%;
+  width: 60%;
 }
 
 .mag > img {
@@ -443,7 +460,7 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: .625rem;
+  padding-top: 0.625rem;
   row-gap: 64px;
 }
 
@@ -564,7 +581,7 @@ Picks all elements that follow the above element that are also not hidden */
   margin-top: 3.125rem;
 }
 .mag-showcase > .sec-label {
-  margin-top: .625rem;
+  margin-top: 0.625rem;
 }
 .mag-issue {
   text-transform: uppercase;
@@ -615,7 +632,7 @@ Picks all elements that follow the above element that are also not hidden */
 
 .journey-info > .art-summ {
   text-align: center;
-  width: 20em;
+  max-width: 20em;
 }
 
 /*  */
@@ -716,7 +733,7 @@ Picks all elements that follow the above element that are also not hidden */
   color: var(--black);
   align-items: center;
   background-color: var(--silver-bg);
-  padding: 1rem .875rem;
+  padding: 1rem 0.875rem;
 }
 
 .newsletter > form > input:focus-visible {
@@ -726,6 +743,7 @@ Picks all elements that follow the above element that are also not hidden */
 .newsletter > form > input {
   flex-grow: 1;
   background-color: transparent;
+  min-width: 0px;
 }
 
 .newsletter > p:last-child {
