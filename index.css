@@ -508,7 +508,6 @@ Picks all elements that follow the above element that are also not hidden */
 
 .special-edition {
   text-align: center;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -521,6 +520,7 @@ Picks all elements that follow the above element that are also not hidden */
 
 .semag-slide {
   display: flex;
+  overflow: scroll;
 }
 
 .semag-slide > span {
@@ -536,7 +536,6 @@ Picks all elements that follow the above element that are also not hidden */
 
 .editor {
   background-color: var(--grey);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding-block: 3.375rem;
@@ -562,6 +561,7 @@ Picks all elements that follow the above element that are also not hidden */
   column-gap: 35.008px;
   margin-top: 1.5rem;
   margin-bottom: 6rem;
+  overflow: scroll;
 }
 
 .art-slide > div {
@@ -690,8 +690,6 @@ Picks all elements that follow the above element that are also not hidden */
   .mags {
     width: 100%;
   }
-
-
 }
 
 .mags > span {
@@ -704,7 +702,6 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 /*  */
-
 
 .journey-wrapper {
   display: flex;
@@ -724,29 +721,45 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
   flex-direction: column;
   align-items: center;
- row-gap: 1.375rem;
-  text-align: center
+  row-gap: 1.375rem;
+  text-align: center;
 }
 
-.journey-info > div{
+.journey-info > div {
   display: flex;
   flex-direction: column;
-  gap: .25rem;
+  gap: 0.25rem;
 }
 
-.journey-info  .header-1{
+.journey-info .header-1 {
   max-width: 18ch;
 }
 
-.journey-info  .art-summ {
+.journey-info .art-summ {
   max-width: 35ch;
+}
+
+@media (min-width: 768px) {
+  .journey-wrapper > .article-grp {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 40px;
+    row-gap: 6.25rem;
+  }
+
+  .journey-wrapper > .article-grp > :nth-child(4n + 1) {
+    grid-column: span 2;
+  }
+
+  .journey-wrapper > .article-grp > :nth-child(6) {
+    grid-column: span 2;
+  }
 }
 
 /*  */
 
 .catwrapper {
   grid-column: 1/-1;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   row-gap: 60px;
@@ -756,7 +769,7 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
   flex-direction: column;
   row-gap: 35.008px;
-  margin-left: 24px;
+  margin-left: 1.5rem;
 }
 
 .category > p {
@@ -767,15 +780,24 @@ Picks all elements that follow the above element that are also not hidden */
 .categories {
   display: flex;
   column-gap: 2.5rem;
+  overflow: scroll;
 }
 
 .categories > div {
-  /* max-width: 220px; */
-  max-width: 282.88px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .category {
+    margin-inline: 1.5rem;
+  }
+
+  .categories > div {
+    flex-shrink: initial;
+  }
 }
 
 /*  */
@@ -783,11 +805,11 @@ Picks all elements that follow the above element that are also not hidden */
 .socials {
   background-color: var(--grey);
   display: flex;
+  row-gap: 2.75rem;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  height: 25rem;
-  justify-content: space-evenly;
+  justify-content: center;
+  min-height: 25rem;
   margin-inline: 24px;
 }
 
@@ -799,10 +821,14 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 3.5rem;
+  column-gap: 5.188rem;
 }
 
-.socials > div > :not([hidden]) ~ :not([hidden]) {
-  margin-top: 3.5rem;
+@media (min-width: 768px) {
+  .socials > div {
+    flex-direction: row;
+  }
 }
 
 .news {
@@ -810,17 +836,15 @@ Picks all elements that follow the above element that are also not hidden */
   color: var(--white);
   display: flex;
   justify-content: center;
-  height: 452px;
-  align-items: center;
-  height: 28.25rem;
+  /* align-items: center; */
+  min-height: 28.25rem;
 }
 
 .newsletter {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 84%;
-  height: 334px;
+  row-gap: 1.625rem;
+  align-items: center;
 }
 
 .newsletter > p:first-child {
@@ -830,31 +854,41 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .newsletter > .header-1 {
-  font-size: 23.008px;
+
+  font-size: max(min(4.861vw, 4.375rem), 1.438rem);
   text-align: center;
+  max-width: 25ch;
 }
 
-.newsletter > form {
+.newsletter > div{
+  max-width: 49.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+  width: 84%;
+}
+
+
+.newsletter  form {
   display: flex;
   color: var(--black);
   align-items: center;
   background-color: var(--silver-bg);
   padding: 1rem 0.875rem;
+  width: 100%;
+  
 }
 
-.newsletter > form > input:focus-visible {
+.newsletter  form > input:focus-visible {
   outline: none;
 }
 
-.newsletter > form > input {
+.newsletter  form > input {
   flex-grow: 1;
   background-color: transparent;
   min-width: 0px;
 }
 
-.newsletter > p:last-child {
-  font-size: 14px;
-}
 /* footer */
 
 footer {
