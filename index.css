@@ -79,7 +79,7 @@ body {
 }
 
 .header-1 {
-  font-size: max(min(5.3vw, 77.008px), var(--header-1));
+  font-size: max(min(5.3vw, 4.375rem), var(--header-1));
   font-family: var(--larken-light);
   line-height: normal;
 }
@@ -671,6 +671,7 @@ Picks all elements that follow the above element that are also not hidden */
   text-align: center;
   margin-top: 1.875rem;
   margin-bottom: 2.813rem;
+  max-width: 34ch;
 }
 
 .mags {
@@ -680,7 +681,6 @@ Picks all elements that follow the above element that are also not hidden */
 @media (min-width: 768px) {
   .mag-showcase {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 800px;
     grid-template-areas:
       "a b"
       "a c";
@@ -724,17 +724,22 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 285.008px;
-  justify-content: space-between;
+ row-gap: 1.375rem;
+  text-align: center
 }
 
-.journey-info > .header-1 {
-  text-align: center;
+.journey-info > div{
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
 }
 
-.journey-info > .art-summ {
-  text-align: center;
-  max-width: 20em;
+.journey-info  .header-1{
+  max-width: 18ch;
+}
+
+.journey-info  .art-summ {
+  max-width: 35ch;
 }
 
 /*  */
