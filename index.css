@@ -104,7 +104,6 @@ body {
 .header-5 {
   text-transform: uppercase;
   font-family: var(--mark-medium);
-  /* font-size: var(--header-5); */
   font-size: max(min(2.222vw, 2rem), var(--header-5));
 }
 
@@ -506,7 +505,7 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 /*  */
-/* jere */
+
 .special-edition {
   text-align: center;
   overflow-x: hidden;
@@ -571,9 +570,9 @@ Picks all elements that follow the above element that are also not hidden */
 
 @media (min-width: 768px) {
   .editor {
-    padding-block: max(min(12.153vw,10.938rem),1.5rem);
+    padding-block: max(min(12.153vw, 10.938rem), 1.5rem);
     padding-inline: 1.5rem;
-    
+
     display: grid;
     grid-template-columns: 2fr 3fr;
   }
@@ -597,8 +596,6 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .editor > .button {
-  /* align-self: center;
-  justify-self: center; */
   place-self: center;
 }
 
@@ -615,34 +612,59 @@ Picks all elements that follow the above element that are also not hidden */
   color: var(--black-tint-text);
 }
 
+@media (min-width: 768px) {
+  .more-articles > .article-grp {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 36px;
+  }
+
+  .more-articles > .article-grp > :last-child {
+    grid-column: span 2;
+  }
+}
+
 /*  */
+
 .main-mag {
   background-color: var(--silver-bg);
 }
 
 .mag-showcase {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "b"
+    "a"
+    "c";
   padding-block: 2.813rem;
-  /* height: 78.125rem;
-  justify-content: space-evenly; */
+  row-gap: 3.438rem;
+  column-gap: 2rem;
 }
 
-.mag-showcase > .button {
-  margin-top: 3.125rem;
-}
-.mag-showcase > .sec-label {
-  margin-top: 0.625rem;
-}
 .mag-issue {
   text-transform: uppercase;
   color: var(--black-tint-text);
   text-align: center;
+  grid-area: b;
+  align-self: center;
 }
 
 .mag1 {
-  margin-block: 3.438rem;
+  grid-area: a;
+}
+
+.mag-showcase > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: c;
+}
+
+.mag-showcase > div > .sec-label {
+  margin-top: 0.625rem;
+}
+.mag-showcase > div > .button {
+  margin-top: 3.125rem;
 }
 
 .mag-desc {
@@ -655,7 +677,35 @@ Picks all elements that follow the above element that are also not hidden */
   display: flex;
 }
 
+@media (min-width: 768px) {
+  .mag-showcase {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 800px;
+    grid-template-areas:
+      "a b"
+      "a c";
+    column-gap: max(min(5.417vw, 4.875rem), 2rem);
+  }
+
+  .mags {
+    width: 100%;
+  }
+
+
+}
+
+.mags > span {
+  flex-grow: 1;
+}
+
+.mags > span img {
+  width: 100%;
+  height: 100%;
+}
+
 /*  */
+
+
 .journey-wrapper {
   display: flex;
   flex-direction: column;
