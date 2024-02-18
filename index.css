@@ -50,11 +50,19 @@
 body {
   font-size: max(min(1.181vw, 1.063rem), var(--body));
   font-family: var(--mark-regular);
+
 }
 
 .container {
   display: grid;
   grid-template-columns: 1.5rem 1fr 1.5rem;
+}
+
+@media (min-width:1024px) {
+  .container{
+    grid-template-columns: 3rem 1fr 3rem;
+  }
+  
 }
 
 .content {
@@ -125,7 +133,16 @@ body {
 }
 
 .layout > section ~ :not([hidden]) {
-  margin-top: 3.125rem;
+  margin-top: max(min(10.417vw, 9.375rem), 3.125rem);
+}
+
+@media (min-width:1024px) {
+
+  .layout > section ~ :not([hidden]){
+    margin-top: max(min(12vw,12rem), 7rem);
+
+  }
+  
 }
 
 /*  */
@@ -421,7 +438,7 @@ Picks all elements that follow the above element that are also not hidden */
 .content:has(> .case-study) {
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
+  row-gap: 80px;
   row-gap: max(min(6.944vw, 6.25rem), 3.75rem);
 }
 
@@ -520,11 +537,11 @@ Picks all elements that follow the above element that are also not hidden */
 
 .semag-slide {
   display: flex;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .semag-slide > span {
-  min-width: 100%;
+  min-width: 33.33%;
 }
 
 .semag-slide > span img {
@@ -561,7 +578,7 @@ Picks all elements that follow the above element that are also not hidden */
   column-gap: 35.008px;
   margin-top: 1.5rem;
   margin-bottom: 6rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .art-slide > div {
@@ -762,7 +779,7 @@ Picks all elements that follow the above element that are also not hidden */
   grid-column: 1/-1;
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
+  row-gap: 90px;
 }
 
 .category {
@@ -780,7 +797,7 @@ Picks all elements that follow the above element that are also not hidden */
 .categories {
   display: flex;
   column-gap: 2.5rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .categories > div {
@@ -845,6 +862,7 @@ Picks all elements that follow the above element that are also not hidden */
   flex-direction: column;
   row-gap: 1.625rem;
   align-items: center;
+  margin-block: max(min(7.778vw, 7rem), 4rem);
 }
 
 .newsletter > p:first-child {
@@ -854,13 +872,12 @@ Picks all elements that follow the above element that are also not hidden */
 }
 
 .newsletter > .header-1 {
-
   font-size: max(min(4.861vw, 4.375rem), 1.438rem);
   text-align: center;
   max-width: 25ch;
 }
 
-.newsletter > div{
+.newsletter > div {
   max-width: 49.125rem;
   display: flex;
   flex-direction: column;
@@ -868,22 +885,20 @@ Picks all elements that follow the above element that are also not hidden */
   width: 84%;
 }
 
-
-.newsletter  form {
+.newsletter form {
   display: flex;
   color: var(--black);
   align-items: center;
   background-color: var(--silver-bg);
   padding: 1rem 0.875rem;
   width: 100%;
-  
 }
 
-.newsletter  form > input:focus-visible {
+.newsletter form > input:focus-visible {
   outline: none;
 }
 
-.newsletter  form > input {
+.newsletter form > input {
   flex-grow: 1;
   background-color: transparent;
   min-width: 0px;
@@ -892,47 +907,55 @@ Picks all elements that follow the above element that are also not hidden */
 /* footer */
 
 footer {
-  background-color: var(--silver-bg);
+  /* display: grid; */
 }
 
 .box1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 23.063rem;
+  background-color: var(--silver-bg);
+  display: grid;
+  row-gap: 2rem;
+  padding-block: 50px;
+  grid-template-areas:
+    "a b"
+    "c c";
 }
 
-.box1 > div:nth-of-type(1) {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.full-bleed {
+  box-shadow: 0 0 0 100vmax var(--silver-bg);
+  clip-path: inset(0 -100vmax);
 }
 
 .mag-part {
-  max-width: 186px;
-  width: fit-content;
+  grid-area: a;
+  align-self: center;
+  max-width: 13.5rem;
+  margin-inline: auto;
 }
 
 .logo-part {
+  grid-area: b;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   justify-content: space-evenly;
+  min-width: min-content;
 }
 
 .logo-part > img {
-  width: 147.008px;
+  width: 70%;
+  max-width: max-content;
 }
 
 .logo-part > p {
   text-align: center;
-  font-size: 1rem;
+  font-size: max(min(2.083vw, 1.563rem), 1rem);
   font-family: var(--larken-light);
   color: var(--black);
 }
 
 .contact {
+  grid-area: c;
+  align-self: center;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
@@ -940,8 +963,28 @@ footer {
   color: var(--black);
 }
 
+@media (min-width: 768px) {
+  .box1 {
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "a c";
+  }
+
+  .logo-part {
+    row-gap: 2.25rem;
+    justify-content: space-around;
+  }
+
+  .contact {
+    justify-content: space-evenly;
+  }
+}
+
 .links {
   background-color: var(--white);
+  padding-block: 3.5rem;
 }
 
 .box2 {
@@ -949,12 +992,11 @@ footer {
   grid-template-columns: repeat(auto-fill, 50%);
   text-transform: uppercase;
   row-gap: 3.125rem;
-  height: 461.008px;
   align-content: center;
 }
 
 .grp1 {
-  font-size: var(--pry-label);
+  font-size: max(min(0.972vw, var(--button-text)), var(--pry-label));
   font-family: var(--mark-medium);
 
   display: flex;
@@ -968,6 +1010,35 @@ footer {
   flex-direction: column;
   row-gap: 1.313rem;
   grid-column: 1/-1;
+}
+
+@media (min-width: 1024px) {
+  footer .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 44px;
+  }
+
+  footer .content > div {
+    padding-block: 100px;
+  }
+
+  .full-bleed {
+    clip-path: inset(0 0 0 -100vmax);
+  }
+
+  .box2 {
+    grid-template-columns: repeat(auto-fill, 33.333%);
+  }
+
+  .grp2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grp2 > * {
+    flex-basis: 50%;
+  }
 }
 
 /* REMEMBER TO CHANGE PIXELS TO REMS */
