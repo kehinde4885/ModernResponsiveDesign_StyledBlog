@@ -142,6 +142,14 @@ body {
   color: var(--black-tint-text);
 }
 
+.article-body{
+  font-size: max(min(1.389vw,1.25rem),1rem);
+  line-height: 172%;
+}
+
+
+
+
 /* Components */
 .button {
   font-family: var(--mark-medium);
@@ -151,6 +159,14 @@ body {
   border: 0.063rem solid;
   color: inherit;
   padding: 14px 28px;
+}
+
+.tag{
+  font-size: .875rem;
+  font-size: max(min(1.25vw,1.125rem),.875rem);
+  font-family: var(--mark-medium);
+  text-transform: capitalize;
+  text-decoration: underline;
 }
 
 .layout > section ~ :not([hidden]) {
@@ -888,7 +904,17 @@ Picks all elements that follow the above element that are also not hidden */
   flex-direction: column;
   row-gap: 1.625rem;
   align-items: center;
-  margin-block: max(min(7.778vw, 7rem), 4rem);
+  /* margin-block: max(min(7.778vw, 7rem), 4rem); */
+margin-block: 4rem;
+}
+
+
+@media (min-width:768px) {
+  .newsletter{
+
+    margin-inline: 3.75rem;
+  }
+  
 }
 
 .newsletter > p:first-child {
@@ -1042,7 +1068,6 @@ footer {
   footer .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 44px;
   }
 
   footer .content > div {
@@ -1051,6 +1076,10 @@ footer {
 
   .full-bleed {
     clip-path: inset(0 0 0 -100vmax);
+  }
+
+  .links{
+    padding-inline: 3.5rem;
   }
 
   .box2 {
@@ -1068,3 +1097,7 @@ footer {
 }
 
 /* REMEMBER TO CHANGE PIXELS TO REMS */
+
+
+/* Article Page Styles */
+
