@@ -332,6 +332,12 @@ section:has(.hero) > .container {
   /* font-size: max(min(5.3vw, 77.008px), var(--header-1)); */
 }
 
+/*  */
+
+.main-featured{
+  margin-top: 6rem !important;
+}
+
 .grouped {
   display: grid;
   row-gap: 4.813rem;
@@ -1094,6 +1100,10 @@ footer {
   .grp2 > * {
     flex-basis: 50%;
   }
+}
+
+.disclaimer{
+  font-size: 10px;
 }
 
 /* REMEMBER TO CHANGE PIXELS TO REMS */
