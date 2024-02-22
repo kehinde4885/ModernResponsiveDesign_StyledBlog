@@ -1102,6 +1102,12 @@ footer {
   }
 }
 
+.disclaimer{
+  font-size: 10px;
+  grid-column: 1/-1;
+  font-family: var(--mark-medium);
+}
+
 /* REMEMBER TO CHANGE PIXELS TO REMS */
 
 /* Article Page Styles */
