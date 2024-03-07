@@ -1,6 +1,7 @@
 # Responsive Images Branching Tree
 - Use SVG / PNG for Icons and Illustrations
 - Use JPG for Photos to Reduce File Size, PNG can be used in Special Circumstances(Transparency) , but remember it will always be be bigger than JPEG , PNG Images can be Compressed.
+- Use WebP for Further Image Size Reduction, without compromising Quality(This is the created Picture Format for Photos on the Web)
 - Target Base Image Size - 150Kb
 
 # Background Image size - 1920 x 1080
