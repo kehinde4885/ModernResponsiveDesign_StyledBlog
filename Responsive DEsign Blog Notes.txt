@@ -1,0 +1,15 @@
+-Increase view port size and see where it breaks to understand responsive design and Fix breakpoints
+- Look at differences in elements between two points , also known as States(Kinda like react), then assimilate how the element
+should move between those points( Kinda like animation)
+- Only Add JS for Responsivity when u are almost certain you can't find it in css
+
+- CSs Function / Property to watch includes;
+Min() and Max - as they allow us to set a range of values from which to choose from.
+
+-Writing the HTML using an Additive Process;
+i.e First write the barebones html , then add divs as the layout dictates
+
+
+References
+Simplified Styled Typography- CSS Tricks
+MDN Docs
